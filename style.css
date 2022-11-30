@@ -1,0 +1,13 @@
+body {
+    background-color: antiquewhite;
+    padding: auto;
+}
+
+#display {
+    width: 200px;
+    height: 40px;
+    background-color: greenyellow;
+    color: darkgreen;
+    border: 1px darkgrey solid;
+    padding: 10px;
+}
