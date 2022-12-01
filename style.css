@@ -61,7 +61,7 @@ button {
 }
 
 .operator,
-#result {
+.result {
     background-color: #ff4000;
     border: 1px #666666 solid;
     border-right: 2px #666666 solid;

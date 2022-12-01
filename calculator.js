@@ -55,17 +55,6 @@ numbers.forEach((number) => {
             number2 = Number(display.textContent);
         };
     });
-    number.addEventListener("keypress", (event) => {
-        if (isFinite(event.key)) {
-            display.textContent += event.key;
-            if (oper === null) {
-                number1 = Number(display.textContent);
-            }
-            else if (number1 !== null && oper !== null) {
-                number2 = Number(display.textContent);
-            };
-        };
-    });
 });
 
 operators.forEach((operator) => {
@@ -84,7 +73,7 @@ operators.forEach((operator) => {
     });
 });
 
-document.getElementById("result").addEventListener("click", () => {
+document.getElementById("=").addEventListener("click", () => {
     display.textContent = operate(number1, number2, oper);
     oper = null;
     number1 = Number(display.textContent);
@@ -109,8 +98,25 @@ document.getElementById("delete").addEventListener("click", () => {
     };
 });
 
-document.getElementById("dot").addEventListener("click", () => {
+document.getElementById(".").addEventListener("click", () => {
     if (!display.textContent.includes(".")) {
-        display.textContent += document.getElementById("dot").textContent;
+        display.textContent += document.getElementById(".").textContent;
+    };
+});
+
+window.addEventListener("keypress", (e) => {
+    let targetKey = e.key;
+    if (e.key === "Enter") {
+        targetKey = "=";
+    };
+    if (e.key === "Delete") {
+        targetKey = "clear";
+    };
+    document.getElementById(targetKey).click();
+});
+window.addEventListener('keydown', function (e) {
+    let targetKey = e.key;
+    if (targetKey === "Backspace") {
+        document.getElementById("delete").click();
     };
 });
