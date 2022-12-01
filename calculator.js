@@ -30,6 +30,9 @@ function operate(x, y, operator) {
         return parseFloat(n.toFixed(2));
     }
     else if (operator === "/") {
+        if (y == 0) {
+            return "TO INFINITY AND BEYOND"
+        };
         n = divide(x, y);
         return parseFloat(n.toFixed(2));
     };
@@ -50,6 +53,17 @@ numbers.forEach((number) => {
         }
         else if (number1 !== null && oper !== null) {
             number2 = Number(display.textContent);
+        };
+    });
+    number.addEventListener("keypress", (event) => {
+        if (isFinite(event.key)) {
+            display.textContent += event.key;
+            if (oper === null) {
+                number1 = Number(display.textContent);
+            }
+            else if (number1 !== null && oper !== null) {
+                number2 = Number(display.textContent);
+            };
         };
     });
 });
@@ -82,4 +96,21 @@ document.getElementById("clear").addEventListener("click", () => {
     number1 = null;
     number2 = null;
     oper = null;
+});
+
+document.getElementById("delete").addEventListener("click", () => {
+    let correction = display.textContent.slice(0, -1);
+    display.textContent = correction;
+    if (oper === null) {
+        number1 = Number(display.textContent);
+    }
+    else if (number1 !== null && oper !== null) {
+        number2 = Number(display.textContent);
+    };
+});
+
+document.getElementById("dot").addEventListener("click", () => {
+    if (!display.textContent.includes(".")) {
+        display.textContent += document.getElementById("dot").textContent;
+    };
 });

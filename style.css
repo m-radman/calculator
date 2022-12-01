@@ -6,49 +6,66 @@ body {
 }
 
 #calc-case {
-    padding: 15px;
+    padding: 15px 8px;
     background-color: #aaaaaa;
     border-radius: 6px;
-    border: 1px #666666 solid;
+    border: 3px #666666 solid;
+    border-right: 5px #666666 solid;
+    border-bottom: 5px #666666 solid;
+    display: flex;
+    flex-direction: column;
 }
 
 #display {
-    width: 200px;
-    height: 40px;
+    height: 120px;
+    width: auto;
+    max-width: 450px;
     background-color: greenyellow;
     color: darkgreen;
-    border: 1px rgb(117, 102, 102) solid;
+    border: 2px rgb(117, 102, 102) solid;
     padding: 10px;
     margin-bottom: 3px;
+    font-size: 50px;
 }
 
 #keyboard {
+    background-color: silver;
     border: 1px darkslategray solid;
-    padding: 2px;
+    border-radius: 4px;
+    padding: 4px;
     display: flex;
     flex-direction: column;
 }
 
 button {
-    width: 30px;
-    height: 20px;
+    width: 110px;
+    height: auto;
+    font-size: 80px;
     text-align: center;
-    margin-right: 4px;
+    border: 1px #666666 solid;
+    border-right: 2px #666666 solid;
+    border-bottom: 2px #666666 solid;
+    margin: 1px 3px;
 }
 
 #clear,
 #delete {
-    width: 60px;
+    width: 166px;
+    height: auto;
     background-color: limegreen;
-    border: 0.2px #666666 solid;
+    border: 1px #666666 solid;
+    border-right: 2px #666666 solid;
+    border-bottom: 2px #666666 solid;
     border-radius: 2px;
-    margin: 2px;
+    font-size: 50px;
 }
 
 .operator,
 #result {
     background-color: #ff4000;
-    border: 0.2px #666666 solid;
+    border: 1px #666666 solid;
+    border-right: 2px #666666 solid;
+    border-bottom: 2px #666666 solid;
     border-radius: 2px;
 }
 
